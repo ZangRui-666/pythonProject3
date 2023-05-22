@@ -12,10 +12,9 @@ import tilemapbase
 gdf = gpd.read_file('/Users/patrick/Desktop/hkbu-college/doc/year3/sem1/econ3105/pythonProject3/output_test1.shp')
 print(gdf.crs)
 gdf.to_crs(3857, inplace=True)
-tilemapbase.start_logging()
-tilemapbase.init(create=True)
 
-ax = gdf.plot('value', cmap='OrRd', legend=True)
+
+ax = gdf.plot('value', cmap='OrRd', scheme='equal_interval', legend=True, alpha=1, linewidth=1.5)
 cx.add_basemap(ax)
 print('done')
 plt.show()
