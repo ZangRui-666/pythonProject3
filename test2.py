@@ -13,8 +13,10 @@ gdf = gpd.read_file('/Users/patrick/Desktop/hkbu-college/doc/year3/sem1/econ3105
 print(gdf.crs)
 gdf.to_crs(3857, inplace=True)
 
-
-ax = gdf.plot('value', cmap='OrRd', scheme='equal_interval', legend=True, alpha=1, linewidth=1.5)
+#ax = gdf.plot('value', cmap='OrRd', scheme='equal_interval', legend=True, alpha=1, linewidth=1.5)
+# alpha scheme cmap
+plt.figure(figsize=(1000, 1000))
+ax = gdf.plot(column='value', cmap='OrRd', figsize=(1000, 1000),legend=True, linewidth=1.5)
 cx.add_basemap(ax)
 print('done')
 plt.show()
@@ -22,6 +24,6 @@ plt.show()
 # plt.plot(gdf)
 print(gdf.crs)
 print(gdf.info())
-mplleaflet.show()
+#mplleaflet.show()
 
 print('')
