@@ -18,27 +18,20 @@ gdf.to_crs(3857, inplace=True)
 
 #ax = gdf.plot('value', cmap='OrRd', scheme='equal_interval', legend=True, alpha=1, linewidth=1.5)
 # alpha scheme cmap k(number of classes
-ax = gdf.plot(column='value', scheme='quantiles', cmap='OrRd', figsize=(30, 30), legend=True)
-cx.add_basemap(ax)
+ax = gdf.plot(column='value', scheme='quantiles', cmap='OrRd', k=8, figsize=(20, 20), legend=True)
+cx.add_basemap(ax, zoom=12)
 plt.show()
 # plt.savefig('test_fig')
-
-m = gdf.explore(column='value', cmap='OrRd', legend=True)
-m.save('test_active_map')
-#ax = gdf.plot(column='value', cmap='OrRd')
-
-# mplleaflet.show(fig=ax.figure, crs=gdf.crs, path='sgmap.html')
-# mplleaflet.show(fig=ax.figure, crs=gdf.crs, path='sgmap1.html')
-
-
-# cx.add_basemap(ax)
+#
+# m = gdf.explore(column='value', cmap='OrRd', legend=True)
+# m.save('test_active_map')
+# #ax = gdf.plot(column='value', cmap='OrRd')
+#
+# # mplleaflet.show(fig=ax.figure, crs=gdf.crs, path='sgmap.html')
+# # mplleaflet.show(fig=ax.figure, cs=gdf.crs, path='sgmap1.html')
+#
+#
+# # cx.add_basemap(ax)
 print('done')
 # plt.savefig('test_fig')
-plt.show()
-
-# plt.plot(gdf)
-print(gdf.crs)
-print(gdf.info())
-#mplleaflet.show()
-
-print('')
+# plt.show()
