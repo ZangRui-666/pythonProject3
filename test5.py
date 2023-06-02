@@ -15,14 +15,14 @@ gdf = gpd.GeoDataFrame.from_file('/Users/patrick/Desktop/output/Chicago__crime_b
 print(gdf.crs)
 # gdf.to_crs(3857, inplace=True)
 gdf.to_crs(4326, inplace=True)
-
+gdf.plot(column='value', cmap='OrRd', figsize=(20, 20))
 #ax = gdf.plot('value', cmap='OrRd', scheme='equal_interval', legend=True, alpha=1, linewidth=1.5)
 # alpha scheme cmap k(number of classes
-gdf.to_file('Chicago_crime_b150.geojson', driver="GeoJSON")
+# gdf.to_file('Chicago_crime_b150.geojson', driver="GeoJSON")
 # ax = gdf.plot(column='value', scheme='quantiles', cmap='OrRd', k=8, figsize=(20, 20), legend=True)
 # cx.add_basemap(ax)
 plt.show()
-# plt.savefig('test_fig')
+plt.savefig('test_fig')
 #
 m = gdf.explore(column='value', cmap='OrRd', legend=True)
 # m.save('test_active_map')
